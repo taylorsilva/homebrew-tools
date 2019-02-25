@@ -14,16 +14,10 @@ class V8 < Formula
 
   option "with-readline", "Use readline instead of libedit"
 
-  # not building on Snow Leopard:
-  # https://github.com/Homebrew/homebrew/issues/21426
-  depends_on :macos => :lion
-
   depends_on "python" => :build
   depends_on :xcode => :build
   depends_on "readline" => :optional
   depends_on "icu4c" => :recommended
-
-  needs :cxx11
 
   resource "depot_tools" do
     url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
